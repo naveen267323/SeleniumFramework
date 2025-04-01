@@ -32,7 +32,10 @@ public class LoginPageTest {
 
 	}
 
-	/*
-	 * @AfterClass void teardown() { if (driver != null) driver.quit(); }
-	 */
+	@AfterClass
+	void teardown() {
+		if (driver != null)
+			driver.quit();
+	}
+
 }

@@ -6,6 +6,10 @@ import org.apache.poi.xssf.usermodel.*;
 
 public class ReadingDataFromExcel {
 
+	
+//Excel--worbook--sheet--row--cell	
+
+	
     public static void main(String[] args) throws IOException {
         // Dynamic file path for portability
         String filePath = System.getProperty("user.dir") + "\\testdata\\Book1.xlsx";
@@ -14,8 +18,9 @@ public class ReadingDataFromExcel {
         try (XSSFWorkbook workbook = new XSSFWorkbook(inputfile)) {
             XSSFSheet excelsheet = workbook.getSheet("Sheet1"); 
 
-            int totalrow = excelsheet.getLastRowNum();
-            int totalcolumn = excelsheet.getRow(0).getLastCellNum();
+         //Get the total number of rows and column   
+            int totalrow = excelsheet.getLastRowNum(); // to get the number of rows
+            int totalcolumn = excelsheet.getRow(0).getLastCellNum(); // // to get the number of column
 
             System.out.println("Total Rows: " + totalrow);
             System.out.println("Total Columns: " + totalcolumn);
@@ -36,5 +41,7 @@ public class ReadingDataFromExcel {
                 System.out.println();
             }
         }
+        
+        
     }
 }
